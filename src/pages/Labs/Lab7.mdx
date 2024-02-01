@@ -10,7 +10,9 @@ export const Title = () => (
 
 ## Lab Overview
 
-Services are a part of application monitoring and provide a logical view of your system. Services are derived from infrastructure entities such as hosts, containers, and processes. In this lab you will learn to modify the ratings service of Robot Shop by changing its name from rs-ratings to rs-ratings-your last name. By the end of the lab, you should be able to find your service in your Application Perspective with its new name.
+Services are a part of application monitoring and provide a logical view of your system. Services are derived from infrastructure entities such as hosts, containers, and processes. Incoming calls are correlated to infrastructure entities and enriched with infrastructure data; for example, the Kubernetes pod label or SpringBoot application name. After this infrastructure-linking processing step, a service mapping step maps the enriched calls to generate a service name per call based on a set of pre-defined rules. To fine-tune the service mapping, you can create your own custom rules.
+
+In this lab you will learn to modify the ratings service of Robot Shop by changing its name from rs-ratings to rs-ratings-your last name using pre-defined rule that makes use of environment variable. By the end of the lab, you should be able to find your service in your Application Perspective with its new name.
 
 ## Step 1: 
 
@@ -74,3 +76,5 @@ In the UI, find your service in your Application Perspective and verify the new 
 Click Application, then Services, and lastly verify the name. 
 
 ![Lab 7](images/lab7.1.png)
+
+In this lab we learnt how we can change the discovered service names using pre-defined rule however custom service rules can also be created, please refer Instana documentation for more details.
