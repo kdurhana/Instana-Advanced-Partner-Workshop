@@ -24,10 +24,8 @@ In the lab, we will begin by installing the "Synthetic Point of Presence".
 Install Synthetic Point of Presence component
 
 Pre-requisite 
-Synthetic PoP needs to be deployed in a Kubernetes cluster. Use the helm chart to deploy Synthetic PoP.
-  
+Synthetic PoP needs to be deployed in a Kubernetes/Openshift cluster. Use the helm chart to deploy Synthetic PoP.
 The minimum supported version for the Kubernetes distribution is 1.10 and Helm V3 is recommended
-
  
 ***********************************************************************************************************
 ##Note : 
@@ -41,12 +39,11 @@ Make sure you are logged into the server where Kubernetes/OpenShift Cluster is i
 
 **Helm**
 
-If Helm wasn't installed during previous labs, install it on Student VM( bastion node) now with command:
+If Helm wasn't installed during previous labs, install it on Student VM now with command:
 
 curl (https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3)
 
 Click on "Synthetic Monitoring" and then on "Deploy a PoP" button:
-
 ![Lab 14](../Labs/images/lab14.1.png) 
 
 Use Simple tab for Helm command
@@ -73,7 +70,7 @@ For Synthetic Point of Presence we need to modify some of the parameters and pro
 •	Then, modify the controller.clusterName parameter and provide a meaningful name.
 •	In the controller.location, specify a name, display name, country, etc. for your "Point of Presence". 
 
-Copy the helm command from the text file and paste it into a terminal window on the Student VM(Bastion node). This will execute the helm chart.
+Copy the helm command from the text file and paste it into a terminal window on the Student VM. This will execute the helm chart.
 You should see an output similar to the following:
 
 [user@bastion ~]$ helm install synthetic-pop \
@@ -99,7 +96,7 @@ After the Synthetic point of presence is installed verify its appearance in the 
 ![Lab 14](../Labs/images/lab14.3.png) 
 
 You can also confirm that the Synthetic Point of Presence is running by typing:
- get pods -n syn-space  ( Syn is a namespace) 
+get pods -n syn-space  ( Syn is a namespace) 
 
 ## Step 2: 
 
@@ -115,9 +112,8 @@ you will see that you have the option of an API Simple test or an API Script tes
 ![Lab 14](../Labs/images/lab14.6.png) 
 
 A new dialog will open prompting for the REST API GET URL. Enter the following URL:
- http://x.x.x.x:8080/  ( This is the ip address / hostname which you need to test )
- 
-This could be any REST request. In this case, we are testing the  API call within the Robot Shop application.
+http://x.x.x.x:8080/    
+This could be any REST request. In this case, we are testing the  API call within the Robot Shop application deployed on sandbox.
 
 Then, select your Point of Presence location and click Next. This allows you to choose the location(s) where you want your synthetic script to execute. In the lab, you only have 1 location that you can select. 
 ![Lab 14](../Labs/images/lab14.7.png) 
