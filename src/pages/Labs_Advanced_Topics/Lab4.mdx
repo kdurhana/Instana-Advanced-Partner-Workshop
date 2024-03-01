@@ -31,10 +31,10 @@ The minimum supported version for the Kubernetes distribution is 1.10 and Helm V
  
 ***********************************************************************************************************
 ##Note : 
-Only If you are using Instana POT
+Only If you are using Instana POT Sandbox
 
 We will be installing the Synthetic Point of Presence into  Kubernetes Cluster provided in the POT / Sandbox
-Helm is already installed on Master Node Server . We will leverage this server for our labs 
+Helm is already installed on Master Node Server . We will execute below helm command on this server.
 ***********************************************************************************************************
 
 Make sure you are logged into the server where Kubernetes/OpenShift Cluster is installed Master/Worker Node 
@@ -60,11 +60,11 @@ Helm install synthetic-pop \
 	--set downloadKey="xxx" \
 	--set controller.location="MyPop;RoksDK;India;Blr;0;0;This is a Synthetic PoP Testing" \
 	--set controller.clusterName="cp4i" \
-    --set controller.instanaKey="xxx" \
+        --set controller.instanaKey="xxx" \
 	--set controller.instanaSyntheticEndpoint="https://synthetics-xxx-saas.instana.io" \
 	--set redis.tls.enabled=false \
 	--set redis.password="a1fc5d01bcbb" \
-    --set seccompDefault=true \  
+        --set seccompDefault=true \  
 	synthetic-pop
 
 The default helm command will look as  above Some of the parameters have been replace with "xxx" for security reasons.
